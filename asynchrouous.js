@@ -1,12 +1,73 @@
-name1="Gurjeet Kaur";
-setTimeout(()=>{console.log(`The name: ${name1}`);},2000);
-function call_name(name1)
+
+1.// //function
+// function getUser()
+// {
+//     return[{username:'john',Email:"johan@test"},
+//     {username:'john',Email:"johan@test"}
+//     ]
+// }
+// function FindUser(username)
+// {
+//     Users=getUser();
+//     user=Users.find((user)=>user.username===username);
+//     return user;
+// }
+// console.log(FindUser('john'))
+
+// //2. function without callback function nd which can return the problem undefinded.
+// function getUser()
+// {
+//     Users=[];
+//     setTimeout(() => {Users=[{username:"gurjeet",email:"gk123@gmail.com"},
+//     {username:"navneet",email:"navneetKaur@gmail.com"}]  
+//     }, 2000);
+//     return Users;
+// }
+// function FindUser(username)
+// {
+//     users=getUser();
+//     console.log(users);
+//     user=users.find((user)=>{user.uername===username})
+//     return user
+// }
+// console.log(FindUser('gurjeet'))
+
+
+// 3.//function problem solved using callback function 
+// function getUsers(callback)
+// {
+//     Users=[];
+//     setTimeout(() => {Users=[{username:"gurjeet",email:"gk123@gmail.com"},
+//                     {username:"navneet",email:"navneetKaur@gmail.com"}]
+// callback(Users)},2000 );
+// }
+// function FindUser(username)
+// {
+// getUsers((users)=>{user=users.find((user)=>user.username===username)})
+// console.log(user);
+// }
+// console.log(FindUser('gurjeet'))
+
+
+//function callback using forloop
+function getUser(callback)
 {
-    console.log(`name call in function: ${name1}`);
+    Users=[]
+    setTimeout(() => {Users=[{username:"gurjeet",email:"gk123@gmail.com"},
+                        {username:"navneet",email:"navneetKaur@gmail.com"},
+                        {username:"navneet",email:"navneetKaur@gmail.com"},
+                        {username:"navneet",email:"navneetKaur@gmail.com"}]
+        
+   callback(Users)},2000);
+   return Users;
 }
-call_name(name1);
-arr=[1,2,3,4,5,6,7,8,['grujeet','kaur'],[1,2,3,4,5,6,7,8,90],99,22,33,445,67,1,1,3,7,4,,6,9,1,['navneet','kaur'],77,44,55,2,1,7,4]
-for(i=0;i<arr.length;i++)
+function FindUser()
 {
-    console.log(arr[i])
+  getUser((Users)=>{
+    for(i=0;i<Users.length;i++)
+    {
+        console.log(Users[i])
+    }
+  })
 }
+FindUser()

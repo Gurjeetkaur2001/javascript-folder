@@ -18,11 +18,23 @@
 
 
 
-try{
-  
-    console.log("we are inside the try block")
+// try{
+
+
+//     console.log("we are inside the try block")
+// }
+// catch(error)
+// {
+//     console.log(error)
+// }
+
+function throws(func) {
+    try {
+        func();
+    } catch {
+        return; // everything OK
+    }
+    throw new Error('Function didn’t throw an exception!');
 }
-catch(error)
-{
-    console.log(error)
-}
+
+
